@@ -11,6 +11,10 @@ pipeline {
             }
         }
 
+        parameters {
+            string(name: 'DIRETORIO', description: 'Caminho do diretorio academico')
+        }
+
         stage('Execução do Teste Levenshtein') {
             steps {
                 bat 'python levenshtein_teste.py'
