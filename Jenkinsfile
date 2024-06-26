@@ -3,16 +3,16 @@ pipeline {
     environment {
         PATH = "C:\\Windows\\System32;C:\\Users\\bruno\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\bruno\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
     }
+    
+    parameters {
+        string(name: 'Pergunta', description: 'Digite a Pergunta:')
+    }
     stages {
         stage('Preparação do Ambiente') {
             steps {
                 
                 echo 'ja instalado'
             }
-        }
-
-        parameters {
-            string(name: 'Pergunta', description: 'Digite a Pergunta:')
         }
 
         stage('Execução do Teste Levenshtein') {
