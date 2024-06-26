@@ -5,7 +5,7 @@ pipeline {
     }
     
     parameters {
-        string(name: 'Pergunta', description: 'Digite a Pergunta:')
+        string(name: 'DIGITE_A_PERGUNTA', defaultValue: '', description: 'Faça a pergunta')
     }
     stages {
         stage('Preparação do Ambiente') {
