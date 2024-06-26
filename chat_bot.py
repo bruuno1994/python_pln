@@ -25,13 +25,12 @@ def encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia=5):
       return "Pergunta não encontrada."
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Uso: python3 chat_bot.py <pergunta>")
-        sys.exit(1)
-
-    pergunta = sys.argv[1]
-    perguntas_respostas = carregar_perguntas("perguntas.txt")
-    limiar_distancia = 10
-
+  perguntas_respostas = carregar_perguntas("perguntas.txt")
+  limiar_distancia = 10
+  
+  pergunta = sys.argv[1]
+    
+  resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
+  print("Resposta:", resposta)
     resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
     print("Resposta:", resposta)
