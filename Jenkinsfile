@@ -12,7 +12,7 @@ pipeline {
         }
 
         parameters {
-            string(name: 'DIRETORIO', description: 'Caminho do diretorio academico')
+            string(name: 'Digite a pergunta:', description: 'Caminho do diretorio academico')
         }
 
         stage('Execução do Teste Levenshtein') {
