@@ -32,5 +32,5 @@ if __name__ == "__main__":
     
   resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
   print("Resposta:", resposta)
-    resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
-    print("Resposta:", resposta)
+  resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
+  print("Resposta:", resposta)
