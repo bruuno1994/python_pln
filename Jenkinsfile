@@ -1,11 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'devopsjourney1/myjenkinsagents:python'
-            label 'docker-agent-python' 
-            
-        }
-    }
+    agent any
     stages {
         stage('Preparação do Ambiente') {
             steps {
@@ -16,7 +10,7 @@ pipeline {
 
         stage('Execução do Teste Levenshtein') {
             steps {
-                sh 'python3 levenshtein_teste.py'
+                bat 'python3 levenshtein_teste.py'
             }
         }
 
@@ -34,7 +28,7 @@ pipeline {
 
         stage('Execução do Chatbot') {
             steps {
-                sh 'python chat_bot.py'
+                bat 'python chat_bot.py'
             }
         }
     }
