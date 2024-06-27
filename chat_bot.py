@@ -38,7 +38,6 @@ if __name__ == "__main__":
     limiar_distancia = 10
 
     pergunta = sys.argv[1]
-    print(f"Pergunta recebida: {pergunta}")
 
     resposta = encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia)
     print("Resposta:", resposta)
