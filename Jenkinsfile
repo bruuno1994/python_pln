@@ -1,18 +1,19 @@
 pipeline {
     agent any
+
     environment {
-        PATH = "C:\\Windows\\System32;C:\\Users\\bruno\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\bruno\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
+        PATH = "C:\\Windows\\System32;C:\\Users\\Marlon\\AppData\\Local\\Programs\\Python\\Python312;C:\\Users\\Marlon\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;${env.PATH}"
     }
-    
+
     parameters {
-        string(name: 'DIGITE_A_PERGUNTA', defaultValue: '', description: 'Faça a pergunta')
+        string(name: 'PERGUNTA', description: 'Pergunta a ser feita')
     }
+
     stages {
-        stage('Preparação do Ambiente') {
-            steps {
-                
-                echo 'ja instalado'
-            }
+       stage('Preparação do Ambiente') {
+           steps {
+                bat 'pip install -r requisitos.txt'
+           }
         }
 
         stage('Execução do Teste Levenshtein') {
@@ -35,7 +36,10 @@ pipeline {
 
         stage('Execução do Chatbot') {
             steps {
-                bat 'python chat_bot.py'
+               script {
+                    def pergunta = params.PERGUNTA
+                    bat "python chat_bot.py \"${pergunta}\""
+                }
             }
         }
     }
