@@ -31,7 +31,7 @@ def encontrar_resposta(pergunta, perguntas_respostas, limiar_distancia=5):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Uso: python script.py <pergunta>")
+        print("Uso: python chat_bot.py <pergunta>")
         sys.exit(1)
 
     perguntas_respostas = carregar_perguntas("perguntas.txt")
