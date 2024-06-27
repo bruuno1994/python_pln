@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'PERGUNTA', description: 'Pergunta a ser feita')
+        string(name: 'Pergunta', description: 'Qual é a sua pergunta?')
     }
 
     stages {
